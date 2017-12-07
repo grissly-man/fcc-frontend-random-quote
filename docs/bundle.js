@@ -30711,6 +30711,14 @@ var styles = {
     },
     "quotebox-api-link": {
         color: "green"
+    },
+    "button": {
+        padding: "10px 20px",
+        color: "white",
+        fontSize: "14pt",
+        backgroundColor: "rgb(255, 127, 80)",
+        border: 0,
+        borderRadius: "4pt"
     }
 };
 
@@ -30756,7 +30764,7 @@ var Button = function (_Component) {
         value: function render() {
             return _react2.default.createElement(
                 'button',
-                { onClick: this.props.onClick },
+                { style: styles['button'], onClick: this.props.onClick },
                 this.props.children
             );
         }
@@ -30839,7 +30847,7 @@ var QuoteBox = function (_Component2) {
                             _react2.default.createElement(
                                 Button,
                                 { onClick: this.tweetQuote },
-                                'Tweet'
+                                _react2.default.createElement('span', { className: 'fa fa-twitter' })
                             )
                         ),
                         _react2.default.createElement(
