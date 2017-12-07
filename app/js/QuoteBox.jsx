@@ -48,6 +48,14 @@ var styles = {
     },
     "quotebox-api-link": {
         color: "green"
+    },
+    "button": {
+        padding: "10px 20px",
+        color: "white",
+        fontSize: "14pt",
+        backgroundColor: "rgb(255, 127, 80)",
+        border: 0,
+        borderRadius: "4pt"
     }
 };
 
@@ -80,7 +88,7 @@ function getNewQuote(cb) {
  */
 class Button extends Component {
     render() {
-        return <button onClick={this.props.onClick}>
+        return <button style={styles['button']} onClick={this.props.onClick}>
             {this.props.children}
         </button>;
     }
@@ -128,7 +136,7 @@ class QuoteBox extends Component {
                 <div style={styles['quotebox-text']}>{this.state.quote}</div>
                 <div style={styles['quotebox-author']}>&#8212;{this.state.author}</div>
                 <div style={styles['quotebox-functions']}>
-                    <div style={styles['quotebox-social']}><Button onClick={this.tweetQuote}>Tweet</Button></div>
+                    <div style={styles['quotebox-social']}><Button onClick={this.tweetQuote}><span className="fa fa-twitter"></span></Button></div>
                     <div style={styles['quotebox-new-quote']}><Button onClick={this.getNewQuote}>&#8635;</Button></div>
                     <div style={styles['quotebox-clearfix']}></div>
                 </div>
